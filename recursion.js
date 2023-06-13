@@ -79,7 +79,7 @@ function gatherStrings(obj) {
   _gatherStrings(obj)
 return strings
 }
-// for let key in obj type of string ? push : continue 
+// for let key in obj type of string ? push : continue
 
 // FURTHER STUDY
 
@@ -87,17 +87,44 @@ return strings
  * return true if val is in array, false if not present). */
 
 function binarySearch(arr, val) {
+  if (arr.length === 0) return false;
 
+  const checkIdx = Math.floor(arr.length / 2);
+  let start = 0;
+  let end = arr.length;
+
+  if (arr[checkIdx] === val) return true;
+  if (arr[checkIdx] < val) start = checkIdx+1;
+  if (arr[checkIdx] > val) end = checkIdx;
+
+  return binarySearch(arr.slice(start,end), val);
 }
 
 
 /** binarySearch: given a sorted array of numbers, and a value,
  * return the index of that value (or -1 if val is not present). */
 
-function binarySearchIndex(arr, val) {
+function binarySearchIndex(arr, val, left=0, right=arr.length) {
+  if (left === right) return -1;
+
+  const checkIdx = Math.floor((left + right) / 2);
+  if (arr[checkIdx] === val) return checkIdx;
+  if (arr[checkIdx] < val) return binarySearchIndex(arr, val, checkIdx+1);
+  if (arr[checkIdx] > val) return binarySearchIndex(arr, val, left, checkIdx);
 
 }
 
+// [1, 2], 1
+
+// left=0
+// right=2
+// check=1
+// arr[check] = 2 > 1
+
+// left=0
+// right=1
+// check=1
+// arr[check] = 2 > 1
 // you might find the above two problems easier if you change the function signature to:
 //
 // function binarySearch(arr, val, left = 0, right = arr.length) {
