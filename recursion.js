@@ -1,14 +1,22 @@
 /** product: calculate the product of an array of numbers. */
 
 function product(nums) {
-
+// base case
+if (nums.length === 0) return 1;
+// progress
+return nums[0] * product(nums.slice(1))
 }
 
 /** longest: return the length of the longest word in an array of words. */
 
 function longest(words) {
+// base case
+if (words.length === 0) return 0;
 
-}
+// progress
+return Math.max(words[0].length, longest(words.slice(1)))
+}  
+
 
 /** everyOther: return a string with every other letter. */
 
