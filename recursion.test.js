@@ -64,19 +64,19 @@ describe("isPalindrome", function() {
   });
 });
 
-// describe("findIndex", function() {
-//   let animals = ["duck", "cat", "cat", "pony"];
+describe("findIndex", function() {
+  let animals = ["duck", "cat", "cat", "pony"];
 
-//   it("returns the first index of the value in the array if the value exists", function() {
-//     expect(findIndex(animals, "duck")).toBe(0);
-//     expect(findIndex(animals, "cat")).toBe(1);
-//     expect(findIndex(animals, "pony")).toBe(3);
-//   });
+  it("returns the first index of the value in the array if the value exists", function() {
+    expect(findIndex(animals, "duck")).toBe(0);
+    expect(findIndex(animals, "cat")).toBe(1);
+    expect(findIndex(animals, "pony")).toBe(3);
+  });
 
-//   it("returns -1 if the value does not exist", function() {
-//     expect(findIndex(animals, "porcupine")).toBe(-1);
-//   });
-// });
+  it("returns -1 if the value does not exist", function() {
+    expect(findIndex(animals, "porcupine")).toBe(-1);
+  });
+});
 
 describe("revString", function() {
   it("returns a reversed copy of the string", function() {
@@ -87,40 +87,40 @@ describe("revString", function() {
   });
 });
 
-// describe("gatherStrings", function() {
-//   it("gathers all object string values into an array", function() {
-//     let whiskey = {
-//       name: "Whiskey",
-//       age: 5,
-//       favFood: "popcorn",
-//       color: "black",
-//       barks: false
-//     };
-//     expect(gatherStrings(whiskey).sort()).toEqual(["Whiskey", "popcorn", "black"].sort());
-//   });
+describe("gatherStrings", function() {
+  it("gathers all object string values into an array", function() {
+    let whiskey = {
+      name: "Whiskey",
+      age: 5,
+      favFood: "popcorn",
+      color: "black",
+      barks: false
+    };
+    expect(gatherStrings(whiskey).sort()).toEqual(["Whiskey", "popcorn", "black"].sort());
+  });
 
-//   it("handles nested objects", function() {
-//     let nestedObj = {
-//       firstName: "Lester",
-//       favoriteNumber: 22,
-//       moreData: {
-//         lastName: "Testowitz"
-//       },
-//       funFacts: {
-//         moreStuff: {
-//           anotherNumber: 100,
-//           deeplyNestedString: {
-//             almostThere: {
-//               success: "you made it!"
-//             }
-//           }
-//         },
-//         favoriteString: "nice!"
-//       }
-//     };
-//     expect(gatherStrings(nestedObj).sort()).toEqual(["Lester", "Testowitz", "you made it!", "nice!"].sort());
-//   });
-// });
+  it("handles nested objects", function() {
+    let nestedObj = {
+      firstName: "Lester",
+      favoriteNumber: 22,
+      moreData: {
+        lastName: "Testowitz"
+      },
+      funFacts: {
+        moreStuff: {
+          anotherNumber: 100,
+          deeplyNestedString: {
+            almostThere: {
+              success: "you made it!"
+            }
+          }
+        },
+        favoriteString: "nice!"
+      }
+    };
+    expect(gatherStrings(nestedObj).sort()).toEqual(["Lester", "Testowitz", "you made it!", "nice!"].sort());
+  });
+});
 
 // describe("binarySearch", function () {
 //   it("should find the index of a value in a sorted array", function() {

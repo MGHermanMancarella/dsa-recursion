@@ -51,15 +51,35 @@ function revString(str) {
 
 /** findIndex: return the index of val in arr (or -1 if val is not present). */
 
-function findIndex(arr, val) {
+function findIndex(arr, val, idx=0) {
+  // base case:
+  if (arr[idx] === val){
+   return idx;
+   }
+   if (idx === arr.length ) return -1
 
+  return findIndex(arr, val, idx + 1)
 }
 
 /** gatherStrings: given an object, return an array of all of the string values. */
 
 function gatherStrings(obj) {
+  let strings = [];
 
+  function _gatherStrings(obj){
+    for (let key in obj){
+      const val = obj[key]
+      if (typeof val === 'string'){
+        strings.push(val)
+      } else if (typeof val === 'object'){
+        _gatherStrings(val)
+      }
+    }
+  }
+  _gatherStrings(obj)
+return strings
 }
+// for let key in obj type of string ? push : continue 
 
 // FURTHER STUDY
 
